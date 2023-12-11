@@ -15,7 +15,7 @@ const config: Config = {
       },
       fontFamily: {
         "playfair-display": "var(--font-playfair-display)",
-        "source-sans-3": "var(--font-source-sans-3)",
+        montserrat: "var(--font-montserrat)",
       },
     },
   },
