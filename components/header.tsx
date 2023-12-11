@@ -18,8 +18,8 @@ export default function Header() {
   };
 
   return (
-    <header>
-      <nav className="flex flex-row justify-between py-5 px-5 relative z-40 sm:px-5 sm:py-5 md:px-20">
+    <header className="sticky top-0 z-50">
+      <nav className="flex flex-row justify-between items-center relative h-20 z-40 px-5 sm:px-5 sm:py-5 md:px-20">
         <Link href="/">
           <Image
             src={logo}
@@ -27,18 +27,18 @@ export default function Header() {
             className="hover:opacity-60 transition ease-in-out duration-300 sm:text-sm"
           />
         </Link>
-        <ul className="hidden sm:flex flex-row items-center justify-center gap-x-10">
+        <ul className="hidden md:flex flex-row items-center justify-center gap-x-10">
           {links.map((link) => (
             <li key={link.hash}>
               <Link
                 href={link.hash}
-                className="text-[#78A25D] font-source-sans-3 hover:opacity-60 transition ease-in-out duration-300 sm:text-sm lg:text-lg font-light">
+                className="text-[#78A25D] font-montserrat hover:opacity-60 transition ease-in-out duration-300 sm:text-sm lg:text-lg font-light">
                 {link.name}
               </Link>
             </li>
           ))}
         </ul>
-        <div className="flex justify-center items-center sm:hidden">
+        <div className="flex justify-center items-center md:hidden">
           {isOpen ? (
             <IoCloseOutline
               className="w-6 h-6 color-blue cursor-pointer"
@@ -65,7 +65,7 @@ export default function Header() {
             }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="w-screen h-screen absolute top-0 left-0 bg-[#78A25D]">
+            className="w-screen h-screen absolute top-0 left-0 bg-[#78A25D] z-10">
             <ul className="h-full w-full flex justify-center items-center flex-col gap-5">
               {links.map((link, index) => (
                 <motion.li
@@ -79,7 +79,8 @@ export default function Header() {
                   }}>
                   <Link
                     href={link.hash}
-                    className={`text-[#FEFBF7] text-2xl font-playfair-display font-thin hover:opacity-60 transition ease-in-out duration-300`}>
+                    className={`text-[#FEFBF7] text-2xl font-playfair-display font-thin hover:opacity-60 transition ease-in-out duration-300`}
+                    onClick={menuBtnToggle}>
                     {link.name}
                   </Link>
                 </motion.li>

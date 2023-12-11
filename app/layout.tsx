@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Source_Sans_3 } from "next/font/google";
+import { Playfair_Display, Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 
@@ -8,9 +8,9 @@ const playfair_display = Playfair_Display({
   variable: "--font-playfair-display",
 });
 
-const source_sans_3 = Source_Sans_3({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-source-sans-3",
+  variable: "--font-montserrat",
 });
 
 export const metadata: Metadata = {
@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${source_sans_3.variable} ${playfair_display.variable} bg-[#F3EEE9]`}>
+        className={`${montserrat.variable} ${playfair_display.variable} bg-[#F3EEE9]`}>
         <Header />
         {children}
       </body>
