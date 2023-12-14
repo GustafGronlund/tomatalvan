@@ -6,6 +6,7 @@ import logo from "@/public/tomatalvan-text.svg";
 import picture from "@/public/placeholder-image.jpg";
 import { easeInOut, motion, useScroll } from "framer-motion";
 import AboutMeCard from "@/components/about-me-card";
+import BlobGradient from "@/components/blob-gradient";
 
 export default function AboutMe() {
   const introText = [
@@ -16,9 +17,9 @@ export default function AboutMe() {
   ];
 
   return (
-    <section className="flex justify-center items-center flex-col px-5">
-      <div className="relative flex justify-center items-center flex-col lg:py-40">
-        <div className="w-8/12 flex justify-center items-center py-10 sm:w-5/12 md:w-5/12 lg:w-5/12 xl:w-4/12 2xl:w-4/12 lg:py-0 lg:pb-10 2xl:pb-20">
+    <section className="flex flex-col items-center justify-center px-5">
+      <div className="relative flex flex-col items-center justify-center lg:py-40">
+        <div className="flex w-8/12 items-center justify-center py-10 sm:w-5/12 md:w-5/12 lg:w-5/12 lg:py-0 lg:pb-10 xl:w-4/12 2xl:w-4/12 2xl:pb-20">
           <Image src={logo} alt="Tomatälvan" />
         </div>
         <div>
@@ -32,17 +33,17 @@ export default function AboutMe() {
                   duration: 1,
                   delay: index * 0.1,
                 }}
-                className="font-playfair-display text-[#78A25D] text-left text-lg sm:text-l lg:text-2xl xl:text-3xl 2xl:text-4xl">
+                className="sm:text-l text-left font-playfair-display text-lg text-[#78A25D] lg:text-2xl xl:text-3xl 2xl:text-4xl"
+              >
                 {item}
               </motion.p>
             </div>
           ))}
         </div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.5 }}
-          transition={{ duration: 0.5, delay: 0.5, ease: easeInOut }}
-          className="absolute bottom-0 right-0 h-48 w-48 rounded-full bg-[#F7E5B1] z-[-1] blur-2xl md:right-0 lg:right-0 2xl:right-52 sm:h-72 sm:w-72 sm:blur-2xl sm:opacity-90"></motion.div>
+        <BlobGradient
+          color="bg-[#F7E5B1]"
+          className="absolute bottom-0 right-0 z-[-1] md:right-0 lg:right-0 2xl:right-52"
+        />
       </div>
       <AboutMeCard />
     </section>
