@@ -26,7 +26,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.variable} ${playfair_display.variable} bg-[#F3EEE9]`}>
+        className={`${montserrat.variable} ${playfair_display.variable} bg-[#F3EEE9]`}
+      >
         <Header />
         {children}
       </body>
