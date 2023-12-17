@@ -50,6 +50,18 @@ export const links = [
   },
 ] as const;
 
+export const heroIntroText: string[] = [
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  "Phasellus in ex convallis, sagittis dui in, in ex convallis, sagittis dui in.",
+];
+
+export const aboutMeIntroText: string[] = [
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  "Suspendisse massa leo, lobortis non est eget, consectetur tempus diam.",
+  "Duis at nisi turpis.",
+  "Quisque a gravida massa",
+];
+
 export const aboutMeData = [
   {
     id: 0,
