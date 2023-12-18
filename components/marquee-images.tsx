@@ -35,7 +35,6 @@ const MarqueeImages: React.FC<MarqueeImagesProps> = ({
           objectFit="cover"
           objectPosition="center"
           className="mr-10 rounded-md md:h-28 md:w-28 lg:h-32 lg:w-32 xl:h-36 xl:w-36 2xl:h-36 2xl:w-36"
-          priority
         />
       ))}
     </Marquee>

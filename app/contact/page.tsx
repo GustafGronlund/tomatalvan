@@ -1,5 +1,3 @@
-"use client";
-
 import PrimaryButton from "@/components/primary-button";
 import React from "react";
 import { contactInputData } from "@/lib/data";
@@ -10,7 +8,6 @@ import logo from "@/public/kontakta-mig-text.svg";
 import Image from "next/image";
 import BlobGradient from "@/components/blob-gradient";
 import ContactImageMarquee from "@/components/contact-image-marquee";
-import { IoMailOutline } from "react-icons/io5";
 
 const Contact = () => {
   return (
