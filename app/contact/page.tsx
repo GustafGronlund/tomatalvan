@@ -1,3 +1,5 @@
+"use client";
+
 import PrimaryButton from "@/components/primary-button";
 import React from "react";
 import { contactInputData } from "@/lib/data";
@@ -8,11 +10,9 @@ import logo from "@/public/kontakta-mig-text.svg";
 import Image from "next/image";
 import BlobGradient from "@/components/blob-gradient";
 import ContactImageMarquee from "@/components/contact-image-marquee";
+import { IoMailOutline } from "react-icons/io5";
 
 const Contact = () => {
-  if (true) {
-  }
-
   return (
     <section className="max-w-screen flex flex-col px-5 md:flex-row md:gap-10 md:px-10">
       <div className="flex h-full w-full flex-col gap-3 md:w-1/2 md:justify-center">
