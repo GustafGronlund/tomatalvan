@@ -14,39 +14,40 @@ export default function Header() {
 
   const menuBtnToggle = () => {
     setIsOpen(!isOpen);
-    console.log(isOpen);
   };
 
   return (
-    <header className="sticky top-0 z-50">
-      <nav className="flex flex-row justify-between items-center relative h-20 z-40 px-5 sm:px-5 sm:py-5 md:px-20">
-        <Link href="/">
+    <header className="sticky top-0 z-50 w-screen ">
+      <nav className="relative z-40 flex h-20 flex-row items-center justify-between px-5 sm:px-10 sm:py-5 md:justify-between lg:mx-auto lg:max-w-screen-xl lg:px-0">
+        <Link href="/" className="lg:w-full">
           <Image
             src={logo}
             alt="Logo"
-            className="hover:opacity-60 transition ease-in-out duration-300 sm:text-sm"
+            className="transition duration-300 ease-in-out hover:opacity-60 sm:text-sm"
           />
         </Link>
-        <ul className="hidden md:flex flex-row items-center justify-center gap-x-10">
+        <div className="flex-grow"></div>
+        <ul className="hidden flex-row items-center justify-center gap-x-5 lg:flex lg:w-full lg:justify-end">
           {links.map((link) => (
             <li key={link.hash}>
               <Link
                 href={link.hash}
-                className="text-[#78A25D] font-montserrat hover:opacity-60 transition ease-in-out duration-300 sm:text-sm lg:text-lg font-light">
+                className="font-montserrat font-light uppercase text-[#78A25D] transition duration-300 ease-in-out hover:opacity-60 sm:text-sm lg:text-base lg:font-medium"
+              >
                 {link.name}
               </Link>
             </li>
           ))}
         </ul>
-        <div className="flex justify-center items-center md:hidden">
+        <div className="flex items-center justify-center lg:hidden">
           {isOpen ? (
             <IoCloseOutline
-              className="w-6 h-6 color-blue cursor-pointer"
+              className="color-blue h-6 w-6 cursor-pointer"
               onClick={menuBtnToggle}
             />
           ) : (
             <RxHamburgerMenu
-              className="w-6 h-6 color-blue cursor-pointer"
+              className="color-blue h-6 w-6 cursor-pointer"
               onClick={menuBtnToggle}
             />
           )}
@@ -65,8 +66,9 @@ export default function Header() {
             }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="w-screen h-screen absolute top-0 left-0 bg-[#78A25D] z-10">
-            <ul className="h-full w-full flex justify-center items-center flex-col gap-5">
+            className="absolute left-0 top-0 z-10 h-screen w-screen bg-[#78A25D]"
+          >
+            <ul className="flex h-full w-full flex-col items-center justify-center gap-5">
               {links.map((link, index) => (
                 <motion.li
                   key={link.hash}
@@ -76,11 +78,13 @@ export default function Header() {
                     ease: easeInOut,
                     duration: 0.5,
                     delay: index * 0.2,
-                  }}>
+                  }}
+                >
                   <Link
                     href={link.hash}
-                    className={`text-[#FEFBF7] text-2xl font-playfair-display font-thin hover:opacity-60 transition ease-in-out duration-300`}
-                    onClick={menuBtnToggle}>
+                    className={`font-playfair-display text-2xl font-thin text-[#FEFBF7] transition duration-300 ease-in-out hover:opacity-60`}
+                    onClick={menuBtnToggle}
+                  >
                     {link.name}
                   </Link>
                 </motion.li>
