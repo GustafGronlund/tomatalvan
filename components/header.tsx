@@ -17,8 +17,8 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-screen ">
-      <nav className="relative z-40 flex h-20 flex-row items-center justify-between px-5 sm:px-10 sm:py-5 md:justify-between lg:mx-auto lg:max-w-screen-xl lg:px-0">
+    <header className="sticky top-0 z-50 w-screen">
+      <nav className="relative z-40 flex h-20 flex-row items-center justify-between px-5 sm:px-10 sm:py-5 md:justify-between lg:mx-auto lg:max-w-screen-xl xl:px-0">
         <Link href="/" className="lg:w-full">
           <Image
             src={logo}
@@ -27,7 +27,7 @@ export default function Header() {
           />
         </Link>
         <div className="flex-grow"></div>
-        <ul className="hidden flex-row items-center justify-center gap-x-5 lg:flex lg:w-full lg:justify-end">
+        <ul className="hidden flex-row items-center justify-center gap-x-5 whitespace-nowrap lg:flex lg:w-full lg:justify-end">
           {links.map((link) => (
             <li key={link.hash}>
               <Link
